@@ -1,0 +1,60 @@
+.circle{
+    background: yellow;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: move-shape 8s infinite;
+  }
+  
+  @keyframes move-shape {
+    0%, 100% {
+      top: 7%;
+      left: 3%;
+      border-radius: 50%;
+    }
+    25% {
+      top: 7%;
+      left: 97%;
+      border-radius: 0%;
+    }
+    50% {
+      top: 93%;
+      left: 97%;
+      border-radius: 50%;
+    }
+    75% {
+      top: 93%;
+      left: 3%;
+      border-radius: 0%;
+    }
+  }
+
+  .bar {
+    margin: auto;
+    margin-top: 300px; 
+    width: 90%; 
+    max-width: 500px; 
+    height: 50px; 
+    background-color: gray;
+  }
+  
+  .bar-progress {
+    width: 0;
+    height: 100%;
+    animation-name: loading;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    background-color: green;
+  }
+  
+  @keyframes loading {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
