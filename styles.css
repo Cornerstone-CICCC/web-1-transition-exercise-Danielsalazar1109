@@ -1,45 +1,49 @@
-.circle {
-  background: yellow;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  animation: move-shape 8s infinite;
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
-@keyframes move-shape {
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation: morph 8s linear infinite;
+  position: absolute;
+}
+
+@keyframes morph {
   0%, 100% {
-    top: 7%;
-    left: 3%;
     border-radius: 50%;
+    transform: translate(0, 0);
   }
   25% {
-    top: 7%;
-    left: 97%;
-    border-radius: 0%;
+    border-radius: 0;
+    transform: translate(calc(100vw - 100%), 0);
   }
   50% {
-    top: 93%;
-    left: 97%;
     border-radius: 50%;
+    transform: translate(calc(100vw - 100%), calc(100vh - 100%));
   }
   75% {
-    top: 93%;
-    left: 3%;
-    border-radius: 0%;
+    border-radius: 0;
+    transform: translate(0, calc(100vh - 100%));
   }
 }
 .bar {
-  margin: auto;
-  margin-top: 300px;
-  width: 90%;
-  max-width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
   height: 50px;
-  background-color: gray;
+  background-color: #ccc;
 }
 
 .bar-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 0;
   height: 100%;
   animation-name: loading;
